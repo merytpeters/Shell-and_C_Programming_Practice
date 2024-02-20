@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main()
 {
@@ -12,7 +13,9 @@ int main()
 
 	upcase_vowel = (x == 'A' || x == 'E' || x == 'I' || x == 'O' || x == 'U');
 
-	if (lwcase_vowel || upcase_vowel)
+	if (!isalpha(x))
+		printf("Error! Not an alphabet.\n");
+	else if (lwcase_vowel || upcase_vowel)
 		printf("%c is a vowel.\n", x);
 	else
 		printf("%c is a consonant.\n", x);

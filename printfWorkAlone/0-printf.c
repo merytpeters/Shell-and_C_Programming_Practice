@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list formatList;
-	int i, len = 0;
+	int len = 0;
 
 	va_start(formatList, format);
 	while (*format != '\0')
@@ -22,39 +22,9 @@ int _printf(const char *format, ...)
 		else if (*format == '%')
 		{
 			format++;
-			switch (*format)
-			{
-			case 'c':
-				{
-					char c = va_arg(formatList, int);
-
-					write(1, &c, 1);
-					format++;
-					len++;
-					break;
-				}
-			case 's':
-				{
-					char *s = va_arg(formatList, char *);
-
-					i = _strlen(s);
-					write(1, s, i);
-					format++;
-					len += i;
-					break;
-				}
-			case '%':
-				{
-					write(1, "%", 1);
-					len++;
-					break;
-				}
-			default:
-				len++;
-				break;
-			}
+			handle_f_s(&format, formatList);
 		}
 	}
 	va_end(formatList);
-	return len;
+	return (len);
 }

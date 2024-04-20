@@ -29,6 +29,7 @@ int _printf(const char *format, ...)
 					char c = va_arg(formatList, int);
 
 					write(1, &c, 1);
+					format++;
 					len++;
 					break;
 				}
@@ -38,6 +39,7 @@ int _printf(const char *format, ...)
 
 					i = _strlen(s);
 					write(1, s, i);
+					format++;
 					len += i;
 					break;
 				}

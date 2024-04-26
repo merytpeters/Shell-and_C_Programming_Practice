@@ -10,6 +10,11 @@ int _printf(const char *format, ...)
 	va_list formatList;
 	int len = 0;
 
+	if (format == NULL)
+	{
+		return (-1);
+	}
+
 	va_start(formatList, format);
 	while (*format != '\0')
 	{
@@ -19,7 +24,7 @@ int _printf(const char *format, ...)
 			format++;
 			len++;
 		}
-		else if (*format == '%')
+		if (*format == '%')
 		{
 			format++;
 			handle_f_s(&format, formatList);

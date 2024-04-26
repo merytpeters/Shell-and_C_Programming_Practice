@@ -11,5 +11,6 @@ void print_char(va_list formatList, int *len);
 void print_string(va_list formatList, int *len);
 void print_percent(int *len);
 void handle_f_s(const char **format, va_list formatList);
+const char *print_percentAdd(void);
 
 #endif

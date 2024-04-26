@@ -30,10 +30,21 @@ void print_string(va_list formatList, int *len)
 
 /**
  * print_percent - Format Specifier %
- * @len: Length
+ * @len: length
  */
 void print_percent(int *len)
 {
 	write(1, "%", 1);
 	(*len)++;
+}
+
+/**
+ * *print_percentAdd - Address of %
+ * Return: Address of %
+ */
+const char *print_percentAdd(void)
+{
+	static const char percent = '%';
+
+	return (&percent);
 }

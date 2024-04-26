@@ -37,5 +37,11 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+	_printf(NULL);
+	_printf("%c%cth %s%s.", 'W', 'i', "some ", "more", '\n');
+	_printf("%c", '\0');
+	_printf("%");
+	_printf("%K\n");
+	_printf("Complete the sentence: You %s nothing, Jon Snow. \n", (char *)0);
 	return (0);
 }

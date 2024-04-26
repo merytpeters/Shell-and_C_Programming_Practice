@@ -7,7 +7,8 @@
  */
 void handle_f_s(const char **format, va_list formatList)
 {
-	 int len = 0;
+	int len = 0;
+
 	switch (**format)
 	{
 		case 'c':
@@ -22,13 +23,8 @@ void handle_f_s(const char **format, va_list formatList)
 			(*format)++;
 			break;
 		}
-		case '%':
-		{
-			print_percent(&len);
-			break;
-		}
 		default:
-			len++;
+			print_percent(&len);
 			break;
 	}
 }
